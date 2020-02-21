@@ -1,15 +1,14 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdn.macaro-ni.jp/assets/img/shutterstock/shutterstock_167718563.jpg);">
   <div class="container">
-    <h1>cocktail <strong>cocktails</strong> to <strong>creative cocktail</strong>!</h1>
-    <p>Change your alchol and learn to drink at one of our campuses around the world.</p>
-    <a class="btn btn-flat" href="#">Apply now</a>
+    <h1>cocktail <strong>to</strong> cocktails <strong></strong>!</h1>
+
   </div>
 </div>
 
 <% @cocktails.each do |cocktail| %>
 <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
 
-<h2><%= link_to cocktail.name, cocktail_path(cocktail)%></h2>
+<p><%= link_to cocktail.name, cocktail_path(cocktail)%></p>
 
 <% end %>
 
