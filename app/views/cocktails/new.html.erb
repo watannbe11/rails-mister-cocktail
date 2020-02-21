@@ -1,0 +1,14 @@
+
+<h1>new drink</h1>
+<%= simple_form_for(@cocktail) do |f| %>
+<%= f.input :name%>
+<%= f.association :ingredients, include_blank: false%>
+<%= f.submit 'Submit', class:"new_cocktail"  %>
+<% end %>
+<%= link_to "back", root_path  %>
+
+
+
+<!-- if you put 2elements that belongs to different tabele -->
+<!-- simple_form_for() do |f| -->
+<!-- insiede of 2simple_form_for it going to be 2 instnas -->

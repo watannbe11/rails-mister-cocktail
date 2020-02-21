@@ -1,0 +1,13 @@
+<h1><%= @cocktail.name %></h1>
+<!-- cocktail has many doses so cocktail.doses is an array  -->
+<%#= puts @doses.ingredients,name %>
+<% @cocktail.doses.each do |dose| %>
+
+<p><%= dose.ingredient.name %></p>
+<p><%= dose.description %></p>
+<%= link_to "delete", dose_path(dose), method: :delete %>
+
+
+<% end %>
+<%= link_to "back", root_path  %>
+<%= link_to "add", new_cocktail_dose_path(@cocktail)  %>

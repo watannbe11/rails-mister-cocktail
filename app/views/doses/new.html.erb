@@ -1,0 +1,10 @@
+<h1>add new dose</h1>
+
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+<%= f.association :ingredient, include_blank: false %>
+<%= f.input :description, as: :text%>
+
+<%= f.submit 'Submit'  %>
+<% end %>
+<%= link_to "back", root_path  %>
+
