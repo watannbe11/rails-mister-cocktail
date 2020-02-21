@@ -16,6 +16,23 @@ drinks['drinks'].each do |drink|
   b = Cocktail.create(name: Faker::Food.dish)
   Dose.create(description: Faker::Food.description, ingredient: a, cocktail: b)
 end
+ingredients = []
+drinks['drinks'].map do |drink|
+  ingredients << drink
+end
+
+10.times do
+  a = Ingredient.create(name: ingredient.sample(1)['strIngredient1'])
+      Ingredient.create(name: ingredient.sample(1)['strIngredient1'])
+  b = Cocktail.create(name: Faker::Food.dish)
+  Dose.create(description: Faker::Food.description, ingredient: a, cocktail: b)
+end
+
+
+
+
+# each with index do
+# sample (number) create cockatail
 
 # Ingredient.create(name: "lemon")
 # Ingredient.create(name: "ice")
