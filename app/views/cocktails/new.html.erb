@@ -2,7 +2,6 @@
 <h1>new drink</h1>
 <%= simple_form_for(@cocktail) do |f| %>
 <%= f.input :name%>
-<%= f.association :ingredients, include_blank: false%>
 <%= f.input :photo, as: :file %>
 <%= f.submit 'Submit', class:"new_cocktail"  %>
 <% end %>

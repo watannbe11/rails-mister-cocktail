@@ -24,7 +24,7 @@
     <%= cl_image_tag('https://res.cloudinary.com/dpykbgnpw/image/upload/v1582266446/cnwmlavqd5kn7dxmm7j4.jpg', width: 400, height: 300, crop: :fill) %>
   <% end %>
 <%= link_to "delete", cocktail_path(@cocktail), method: :delete %>
-<%= link_to "back", root_path  %>
+<%= link_to "back", root_path, class: "btn-inbox" %>
 <%= link_to "add", new_cocktail_dose_path(@cocktail)  %>
   </div>
 </div>
