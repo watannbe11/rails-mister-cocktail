@@ -9,28 +9,35 @@ require 'faker'
 require 'open-uri'
 require 'json'
 puts "creating"
+serialized_cocktails_name = open('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita').read
+drinks = JSON.parse(serialized_cocktails_name)
+
 serialized_cocktails = open('https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list').read
 drinks = JSON.parse(serialized_cocktails)
-drinks['drinks'].each do |drink|
-  a = Ingredient.create(name: drink['strIngredient1'])
-  b = Cocktail.create(name: Faker::Food.dish)
-  Dose.create(description: Faker::Food.description, ingredient: a, cocktail: b)
+
+drinks['drinks'].each do |obj|
+  Ingredient.create!(name: obj['strIngredient1'])
 end
+
 ingredients = []
 drinks['drinks'].map do |drink|
   ingredients << drink
 end
 
-10.times do
-  a = Ingredient.create(name: ingredient.sample(1)['strIngredient1'])
-      Ingredient.create(name: ingredient.sample(1)['strIngredient1'])
-  b = Cocktail.create(name: Faker::Food.dish)
-  Dose.create(description: Faker::Food.description, ingredient: a, cocktail: b)
-end
+# 10.times do
+#   a = Ingredient.create(name: ingredient.sample(1)['strIngredient1'])
+#       Ingredient.create(name: ingredient.sample(1)['strIngredient1'])
+#   b = Cocktail.create(name: Faker::Food.dish)
+#   Dose.create(description: Faker::Food.description, ingredient: a, cocktail: b)
+# end
 
 
 
-
+# drinks['drinks'].each do |drink|
+#   a = Ingredient.create(name: drink['strIngredient1'])
+#   b = Cocktail.create(name: Faker::Food.dish)
+#   Dose.create(description: Faker::Food.description, ingredient: a, cocktail: b)
+# end
 # each with index do
 # sample (number) create cockatail
 

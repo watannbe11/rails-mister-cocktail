@@ -12,6 +12,26 @@
   </head>
 
   <body>
+    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+      <%= link_to  root_path, class: "nav-left-icon" do%>
+        <i class="fas fa-cocktail"></i>
+      <% end %>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <%= link_to "make a cocktail", new_cocktail_path(@cocktails), class: "nav-link"  %>
+          </li>
+        </ul>
+      </div>
+    </div>
     <%= yield %>
+    <div class="footer">
+      <div class="footer-links">
+        <a href="https://github.com/watannbe11"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/yuichiro-watanabe-166a081a2/"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
   </body>
+
+
 </html>
